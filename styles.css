@@ -1,0 +1,534 @@
+/* ==========================
+   RESET & BASE STYLES
+========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 60px; /* Same height as header */
+}
+
+body {
+  line-height: 1.6;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/* ==========================
+   HEADER & NAVIGATION
+========================== */
+header {
+  background: #222;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #fff;
+}
+
+.logo span {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+/* Navigation List */
+header nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav ul li {
+  margin-right: 20px;
+}
+
+header nav ul li:last-child {
+  margin-right: 0;
+}
+
+/* Top-level Nav Links */
+header nav a,
+header nav ul li a {
+  color: #fff !important;
+  text-decoration: none !important;
+  font-weight: bold;
+}
+
+header nav a:hover,
+header nav ul li a:hover {
+  color: #ff9800 !important;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  white-space: nowrap;
+}
+
+.dropdown-menu li {
+  width: 100%;
+  z-index: 2000;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 15px;
+  color: #222 !important;
+  background: #fff;
+  text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+  background: #f2f2f2;
+  color: #ff9800 !important;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* ==========================
+   HERO SECTION
+========================== */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  min-height: 95vh;
+  background: url('images/MCA-background-5.jpg') no-repeat center center;
+  background-size: contain;
+  background-color: #18640b;
+  color: white;
+  padding: 6px 20px;
+}
+
+.hero h1 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+}
+
+.hero p {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  max-width: 700px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* ==========================
+   ABOUT SECTION
+========================== */
+#about {
+  padding: 60px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+#about p {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.about-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 30px;
+}
+
+.about-gallery img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* ==========================
+   GENERIC SECTION
+========================== */
+section {
+  padding: 50px 20px;
+  text-align: center;
+  background: #fff;
+  margin-bottom: 10px;
+}
+
+/* ==========================
+   SERVICES
+========================== */
+.service-detail {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.service-detail h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.service-detail p {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.service-photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 5px;
+}
+
+.service-photos img {
+  width: 80%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (max-width: 1024px) {
+  .service-photos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .service-photos {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================
+   VIDEO SECTION
+========================== */
+#video {
+  padding: 60px 20px;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+#video h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Video Gallery */
+.video-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.video-item {
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.video-item:hover {
+  transform: scale(1.05);
+}
+
+.video-item video {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  pointer-events: none; /* prevents inline play */
+}
+
+/* Modal */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  z-index: 2000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 800px;
+  width: 90%;
+}
+
+.modal-content video {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/*.close-btn {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}*/
+
+.close-btn {
+  position: absolute;
+  top: 10px;   /* inside top */
+  right: 10px; /* inside right */
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  background: rgba(0,0,0,0.6); /* optional: dark circle background */
+  border-radius: 50%;
+  padding: 5px 10px;
+  line-height: 1;
+  z-index: 9999; /* ensures it sits above the video */
+}
+
+/* ==========================
+   CONTACT FORM
+========================== */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+form input,
+form textarea {
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.contact-buttons button {
+  flex: 1;
+  padding: 10px;
+  background: #222;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+#whatsappBtn {
+  background: #25D366;
+}
+
+#whatsappBtn:hover {
+  background: #1ebe57;
+}
+
+#messengerBtn {
+  background: #0084FF;
+}
+
+#messengerBtn:hover {
+  background: #006fe6;
+}
+
+/* ==========================
+   MODAL
+========================== */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+/* Image Modal with Navigation */
+#imageModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+#imageModal.hidden {
+  display: none;
+}
+
+#imageModal img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+#closeImageModal {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Next/Prev Buttons */
+.modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  padding: 10px;
+}
+
+#prevImage {
+  left: 30px;
+}
+
+#nextImage {
+  right: 30px;
+}
+
+.modal-nav:hover {
+  color: #ff9800;
+}
+
+/* Copying Text */
+#copyText {
+  width: 100%;
+  height: 120px;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 1rem;
+  resize: none;
+}
+
+#copyBtn,
+#closeModal {
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#copyBtn:hover,
+#closeModal:hover {
+  background: #444;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+footer {
+  text-align: center;
+  background: #222;
+  color: #fff;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* ================================================
+   HOVER ANIMATION FOR SERVICES & ABOUT GALLERY   |
+================================================= */
+/* Image Hover Animation for Services and About Gallery */
+.service-photos img,
+.about-gallery img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border-radius: 10px; /* rounded corners */
+}
+
+.service-photos img:hover,
+.about-gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
